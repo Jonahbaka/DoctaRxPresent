@@ -32,6 +32,8 @@ import {
   workflowSteps
 } from './data/mockDoctaRxData';
 
+const assetUrl = (path: string) => `${import.meta.env.BASE_URL}${path.replace(/^\/+/, '')}`;
+
 const scopeItems = [
   '2 to 3 selected Primary Healthcare Centres',
   '1 General Hospital referral pathway',
@@ -172,8 +174,8 @@ function App() {
               <video
                 controls
                 preload="metadata"
-                poster="/media/pilot-video-poster.png"
-                src="/presentation/assets/video/pre_presentation_video.mp4"
+                poster={assetUrl('media/pilot-video-poster.png')}
+                src={assetUrl('presentation/assets/video/pre_presentation_video.mp4')}
               />
             </div>
             <PilotMessageGlassCard
@@ -263,8 +265,8 @@ function App() {
               <video
                 controls
                 preload="metadata"
-                poster="/media/pilot-video-poster.png"
-                src="/presentation/assets/video/feature_pillars_video.mp4"
+                poster={assetUrl('media/pilot-video-poster.png')}
+                src={assetUrl('presentation/assets/video/feature_pillars_video.mp4')}
               />
             </div>
             <PilotMessageGlassCard
