@@ -23,7 +23,9 @@ The static output is generated in `dist/`.
 
 - `src/App.tsx` - pilot-focused presentation microsite
 - `src/data/mockDoctaRxData.ts` - fictional sample pilot data
-- `public/media/DoctaRx_Pilot_PrePresentation_With_Live_Portal_Walkthrough.mp4` - final video
+- `public/presentation/assets/video/pre_presentation_video.mp4` - final pre-presentation video
+- `public/presentation/assets/video/feature_pillars_video.mp4` - platform feature walkthrough
+- `public/media/DoctaRx_Pilot_PrePresentation_With_Live_Portal_Walkthrough.mp4` - compatibility copy of the final video
 - `presentation-video/scripts/pre_presentation_video_script.md` - video script
 - `presentation-video/scripts/pilot_program_story.md` - pilot story
 - `presentation-video/scripts/narration_script_female_voice.md` - female narration script
@@ -36,7 +38,7 @@ The static output is generated in `dist/`.
 
 ## Video Quality Notes
 
-- Uses a calm female healthcare narrator.
+- Uses a calm Nigerian female healthcare narrator fallback when JSON2Video/ElevenLabs quotas are unavailable.
 - Uses actual DoctaRx Nigeria portal walkthrough footage.
 - Uses demo accounts and synthetic sample data only.
 - Does not show real PHI, real diagnosis claims, or real government data.
@@ -53,4 +55,3 @@ presentation.doctarx.com
 AWS credentials were not committed and should never be stored in the repository.
 
 See `deploy/aws/README.md` for the deployment checklist.
-
