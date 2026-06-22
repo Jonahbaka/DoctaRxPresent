@@ -1,0 +1,61 @@
+{
+  "comment": "Pilot-focused JSON2Video plan. Use demo characters only. No fake government approval or endorsement.",
+  "resolution": "full-hd",
+  "quality": "high",
+  "draft": false,
+  "scenes": [
+    {
+      "id": "pilot_context",
+      "duration": 7,
+      "title": "Start Small In Abuja",
+      "prompt": "Realistic documentary video in Abuja, Nigeria. A patient arrives at a selected primary healthcare centre while staff prepare for a small digital coordination pilot. Warm daylight, practical public-health tone, no fake government seal."
+    },
+    {
+      "id": "pilot_scope",
+      "duration": 8,
+      "title": "Selected PHCs, One Hospital, Pharmacy Partners",
+      "prompt": "Clean visual montage of selected PHCs, one general hospital, doctors, pharmacy partners, and a Ministry dashboard connected by subtle interface lines. Practical, not sci-fi, no over-focus on AI."
+    },
+    {
+      "id": "phc_intake",
+      "duration": 8,
+      "title": "PHC Intake",
+      "prompt": "Nurse Grace captures Amina Yusuf's basic request at Demo PHC Garki on a tablet. No diagnosis, no private data, no emergency drama."
+    },
+    {
+      "id": "doctor_review",
+      "duration": 8,
+      "title": "Doctor Review",
+      "prompt": "Dr. Musa Ibrahim reviews a patient request and consults remotely where appropriate. Calm Nigerian healthcare setting, professional clinical workflow."
+    },
+    {
+      "id": "prescription_referral",
+      "duration": 8,
+      "title": "Prescription Or Referral",
+      "prompt": "Pharmacist Ada sees prescription visibility and Mr. Bello receives a referral summary. Show role-based coordination without exposing patient-level data."
+    },
+    {
+      "id": "dashboard",
+      "duration": 8,
+      "title": "Ministry Dashboard",
+      "prompt": "Ministry dashboard user views aggregate pilot indicators: 128 patient requests, 86 consultations, 34 referrals, 52 prescriptions, 74 percent follow-up visibility, 18-minute response time."
+    },
+    {
+      "id": "timeline",
+      "duration": 8,
+      "title": "Pilot Timeline",
+      "prompt": "Public-health implementation timeline with alignment, configuration, training, controlled launch, evaluation, and scale decision. Practical Abuja pilot tone."
+    },
+    {
+      "id": "handover",
+      "duration": 6,
+      "title": "Handover",
+      "prompt": "Formal Abuja conference room ready for Jonah Baka's human PowerPoint presentation. No avatar, no fake approval, no fake government seal."
+    }
+  ],
+  "voice": {
+    "direction": "Calm female healthcare narrator, warm and reassuring, clear English, professional public-health explainer tone, suitable for a Ministry healthcare presentation.",
+    "finalLine": "This is the care journey DoctaRx proposes to strengthen. Jonah Baka will now present the pilot roadmap and partnership details."
+  }
+}
+
