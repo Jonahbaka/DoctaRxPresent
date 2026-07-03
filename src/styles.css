@@ -433,6 +433,55 @@ h3 {
   max-width: none;
 }
 
+.deckBand {
+  padding-top: 92px;
+}
+
+.deckPreview {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.deckThumb {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  border: 1px solid rgba(10, 169, 135, 0.18);
+  border-radius: 8px;
+  background: #061f33;
+  box-shadow: 0 20px 48px rgba(6, 31, 51, 0.14);
+  transition: transform 180ms ease, box-shadow 180ms ease;
+}
+
+.deckThumb:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 26px 60px rgba(6, 31, 51, 0.2);
+}
+
+.deckThumb img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+
+.deckThumb span {
+  position: absolute;
+  left: 12px;
+  bottom: 12px;
+  min-height: 34px;
+  padding: 8px 10px;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 8px;
+  background: rgba(6, 31, 51, 0.82);
+  color: #fff;
+  font-size: 0.82rem;
+  font-weight: 900;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
 .twoColumn,
 .featureLayout,
 .dataGrid {
@@ -829,6 +878,18 @@ th {
   color: #fff;
 }
 
+.askActions {
+  display: grid;
+  gap: 10px;
+  justify-items: stretch;
+  min-width: 190px;
+}
+
+.secondaryAsk {
+  border-color: rgba(22, 214, 173, 0.34);
+  background: rgba(22, 214, 173, 0.12);
+}
+
 @keyframes glassFoldOpen {
   0% {
     opacity: 0;
@@ -898,9 +959,14 @@ th {
   .twoColumn,
   .featureLayout,
   .dataGrid,
+  .deckPreview,
   .splitHeader,
   .askBand {
     grid-template-columns: 1fr;
+  }
+
+  .askActions {
+    justify-items: start;
   }
 
   .workflow,

@@ -33,6 +33,12 @@ import {
 } from './data/mockDoctaRxData';
 
 const assetUrl = (path: string) => `${import.meta.env.BASE_URL}${path.replace(/^\/+/, '')}`;
+const detailedPdfUrl = assetUrl('presentation/assets/documents/DoctaRx_Abuja_FCT_Pilot_Selected_Slides.pdf');
+const mainVideoUrl = assetUrl('presentation/assets/video/pre_presentation_video_v20260703_premiumopener.mp4');
+const featureVideoUrl = mainVideoUrl;
+const selectedSlideUrls = Array.from({ length: 10 }, (_, index) =>
+  assetUrl(`presentation/assets/slides/selected/slide_${String(index + 1).padStart(2, '0')}.jpg`)
+);
 
 const scopeItems = [
   '2 to 3 selected Primary Healthcare Centres',
@@ -46,20 +52,20 @@ const scopeItems = [
 
 const heroMessages = [
   {
-    title: 'Start small',
-    body: 'Pilot focus: selected Abuja facilities, clear roles, and measurable operating results.'
+    title: 'Uses the uploaded premium slides',
+    body: 'The video is rebuilt around the new Abuja/FCT slide deck you provided.'
   },
   {
-    title: 'Connect the journey',
-    body: 'DoctaRx connects PHCs, doctors, pharmacies, referrals, and Ministry visibility.'
+    title: 'Keeps the real platform walkthrough',
+    body: 'Patient, provider, dashboard, and reporting workflows remain shown as product actions.'
   },
   {
-    title: 'Show evidence',
-    body: 'Video consultation, referral tracking, forecasting, and DHIS2-ready reporting support the decision to scale.'
+    title: 'Keeps the video-call simulation',
+    body: 'The consultation segment remains live-motion and tied to the narration.'
   },
   {
-    title: 'Human handover',
-    body: 'Next: Pilot roadmap and partnership details with Jonah Baka.'
+    title: 'Synced to the approved narration',
+    body: 'Every scene duration is rebuilt from the voice track to avoid drift.'
   }
 ];
 
@@ -141,7 +147,9 @@ function App() {
           <div className="navLinks" aria-label="Page sections">
             <a href="#pilot-program">Pilot</a>
             <a href="#features">Features</a>
+            <a href="#deck">Deck</a>
             <a href="#dashboard">Dashboard</a>
+            <a href={detailedPdfUrl} target="_blank" rel="noreferrer">PDF</a>
             <a className="navButton" href="#pilot-ask">Pilot Ask</a>
           </div>
         </nav>
@@ -158,13 +166,16 @@ function App() {
               <a href="#pilot-program" className="primaryAction">
                 Review Pilot Scope <ArrowRight size={18} />
               </a>
-              <a href="#dashboard" className="secondaryAction">
-                View Sample Data
-              </a>
+            <a href="#dashboard" className="secondaryAction">
+              View Sample Data
+            </a>
+            <a href={detailedPdfUrl} className="secondaryAction" target="_blank" rel="noreferrer">
+              Open PDF Slides
+            </a>
             </div>
             <div className="heroStats" aria-label="Pilot summary">
-              <span><strong>90 days</strong> controlled launch</span>
-              <span><strong>5</strong> demo facilities</span>
+              <span><strong>5:39</strong> detailed briefing</span>
+              <span><strong>10</strong> premium slides</span>
               <span><strong>0 PHI</strong> in presentation</span>
             </div>
           </div>
@@ -175,12 +186,12 @@ function App() {
                 controls
                 preload="metadata"
                 poster={assetUrl('media/pilot-video-poster.png')}
-                src={assetUrl('presentation/assets/video/pre_presentation_video.mp4')}
+                src={mainVideoUrl}
               />
             </div>
             <PilotMessageGlassCard
               eyebrow="Pre-presentation explainer"
-              title="Pilot story before the live briefing"
+              title="Detailed platform and pilot briefing"
               messages={heroMessages}
             />
           </div>
@@ -194,16 +205,39 @@ function App() {
             <h2>Start small. Measure results. Scale after evidence.</h2>
           </div>
           <p>
-            The pilot does not replace hospitals, PHCs, doctors, pharmacies, or government systems.
-            It adds a calm coordination and visibility layer around the patient journey.
+            The DoctaRx Abuja/FCT controlled pilot program does not replace hospitals,
+            PHCs, doctors, pharmacies, or government systems. It adds a calm coordination
+            and visibility layer around the patient journey.
           </p>
+        </div>
+      </section>
+
+      <section id="deck" className="band deckBand">
+        <div className="sectionHeader splitHeader">
+          <div>
+            <p className="eyebrow">Uploaded slide deck</p>
+            <h2>Premium Abuja/FCT pilot slides now drive the video.</h2>
+          </div>
+          <p>
+            The local preview uses the uploaded deck as the visual spine, with the live
+            platform walkthrough and video consultation simulation inserted where the
+            narration calls for real product motion.
+          </p>
+        </div>
+        <div className="deckPreview">
+          {selectedSlideUrls.map((slideUrl, index) => (
+            <a href={detailedPdfUrl} target="_blank" rel="noreferrer" className="deckThumb" key={slideUrl}>
+              <img src={slideUrl} alt={`DoctaRx Abuja/FCT selected slide ${index + 1}`} />
+              <span>Slide {index + 1}</span>
+            </a>
+          ))}
         </div>
       </section>
 
       <section id="pilot-program" className="band">
         <div className="sectionHeader">
           <p className="eyebrow">Pilot program focal point</p>
-          <h2>What the Abuja pilot will look like</h2>
+          <h2>What the DoctaRx Abuja/FCT controlled pilot program will look like</h2>
           <p>
             A controlled operating model with defined facilities, users, indicators, and Ministry review points.
           </p>
@@ -254,8 +288,8 @@ function App() {
             <h2>Designed for practical public-sector review</h2>
           </div>
           <p>
-            The presentation now shows the connected care flow, not only a slide deck:
-            consultation, notes, prescriptions, referrals, analytics, forecasting, and reporting readiness.
+            The presentation leads with the real portal walkthrough:
+            patient access, provider login, consultation flow, live-motion video consultation, analytics, and reporting readiness.
           </p>
         </div>
 
@@ -266,21 +300,21 @@ function App() {
                 controls
                 preload="metadata"
                 poster={assetUrl('media/pilot-video-poster.png')}
-                src={assetUrl('presentation/assets/video/feature_pillars_video.mp4')}
+                src={featureVideoUrl}
               />
             </div>
             <PilotMessageGlassCard
               compact
-              eyebrow="Feature walkthrough"
-              title="No frozen consultation ending"
+              eyebrow="Platform walkthrough"
+              title="Real portal flow stays in the presentation"
               messages={[
                 {
-                  title: 'Full journey',
-                  body: 'The walkthrough continues past video consultation into referral, analytics, forecasting, DHIS2 readiness, and handover.'
+                  title: 'Click-through flow',
+                  body: 'The platform walkthrough remains visible, including patient and provider portal steps.'
                 },
                 {
-                  title: 'Smooth close',
-                  body: 'The final frame prepares the room for the pilot roadmap and partnership details.'
+                  title: 'Video consultation plus workflow',
+                  body: 'The video-call moment is shown as a live-motion demo tied to notes, referrals, analytics, and reporting.'
                 }
               ]}
             />
@@ -307,7 +341,7 @@ function App() {
           <h2>Sample Pilot Dashboard</h2>
           <p>
             These figures are synthetic demonstration data to show what the Ministry can monitor
-            during a controlled Abuja pilot. No real patient data is used.
+            during the DoctaRx Abuja/FCT controlled pilot program. No real patient data is used.
           </p>
         </div>
         <div className="metricsGrid">
@@ -454,12 +488,18 @@ function App() {
             with technical onboarding.
           </h2>
           <p>
-            The live presentation explains the pilot roadmap, partnership structure, and next steps.
+            The video briefing introduces the operating model; the PDF slides provide the detailed
+            presentation for questions, roadmap review, and controlled pilot program approval discussion.
           </p>
         </div>
-        <a className="askButton" href="#top">
-          Rewatch briefing <PlayCircle size={18} />
-        </a>
+        <div className="askActions">
+          <a className="askButton" href="#top">
+            Rewatch briefing <PlayCircle size={18} />
+          </a>
+          <a className="askButton secondaryAsk" href={detailedPdfUrl} target="_blank" rel="noreferrer">
+            Open PDF slides <FileCheck2 size={18} />
+          </a>
+        </div>
       </section>
     </main>
   );
